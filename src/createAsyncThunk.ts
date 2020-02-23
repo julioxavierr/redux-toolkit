@@ -1,5 +1,4 @@
 import { Dispatch, AnyAction } from 'redux'
-import nanoid from 'nanoid'
 import {
   createAction,
   PayloadAction,
@@ -145,7 +144,7 @@ export function createAsyncThunk<
       getState: () => GetState<ThunkApiConfig>,
       extra: GetExtra<ThunkApiConfig>
     ) => {
-      const requestId = nanoid()
+      const requestId = Math.random();
 
       const abortController = new AbortController()
       let abortReason: string | undefined
